@@ -9,7 +9,7 @@ from .utils import design_lyon_filters, epsilon_from_tau, set_gain
 class LyonCalc:
     def __init__(self, base_path=None):
         base_path = base_path or os.path.dirname(__file__)
-        self._lyon_lib = ctypes.CDLL(os.path.join(base_path, 'liblyon.so'))
+        self._lyon_lib = ctypes.CDLL(os.path.join(base_path, 'liblyon.dll'))
 
         self._lyon_lib.soscascade.argtypes = [
             ndpointer(ctypes.c_double, flags="C_CONTIGUOUS"),  # signal
